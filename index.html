@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title style="font-family:'Times New Roman', Times, serif">Bellybutton Biodiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 jumbotron text-center" style="background-color:mediumaquamarine">
+        <h1 style="font-family:'Times New Roman', Times, serif">Belly Button Biodiversity Dashboard</h1>
+        <p style="font-family:'Times New Roman', Times, serif"><i>Use the interactive charts below to explore the dataset</i></p>
+      </div>
+      <div class="col-md-4" jumbotron">
+        <img src="images/bacteria.jpg" style="width:400px;height:315px;">
+      </div>
+    </div>
+    <div class="row">
+      <div class="text-center" style="background-color:palegreen">
+      <h3 style="font-family:'Times New Roman', Times, serif">How to Use this Dashboard</h3>
+      <p style="font-family:'Times New Roman', Times, serif">Select your unique ID number from the dropdown menu to see your personalized bellybutton bacteria data. Your demographic data will appear in the "Demographic Info" panel. The top 10 bacteria types found in your bellybutton will be ranked in descending order in the bar chart. The gauge will show how frequently you wash your bellybutton. And the bubble plot below will show the comparative sample size of each bacteria found. Please contact the research team if you have any further questions!</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5 style="font-family:'Times New Roman', Times, serif">Test Subject ID No.:</h5>
+          <!-- <select id="selDataset"></select> -->
+          <select id="selDataset" onchange="optionChanged(this.value)" style="font-family:'Times New Roman', Times, serif"></select>
+        </div>
+        <div class="panel panel-primary" style="outline-color:darkslategray">
+          <div class="panel-heading" style="background-color:mediumaquamarine">
+            <h3 class="panel-title" style="font-family:'Times New Roman', Times, serif"><b>Demographic Info</b></h3>
+          </div>
+          <div id="sample-metadata" class="panel-body" style="font-family:'Times New Roman', Times, serif"></div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div id="bar"></div>
+      </div>
+      <div class="col-md-5">
+        <div id="gauge"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="bubble"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="charts.js"></script>
+
+</body>
+
+</html>
